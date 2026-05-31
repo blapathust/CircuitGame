@@ -1,4 +1,4 @@
-package circuit.objects.components;
+package circuit.objects.components.impedant;
 
 public class Resistor extends Component{
 

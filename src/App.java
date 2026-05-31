@@ -1,4 +1,9 @@
-import circuit.objects.components.*;
+import circuit.objects.components.impedant.Capacitor;
+import circuit.objects.components.impedant.Inductor;
+import circuit.objects.components.impedant.LED;
+import circuit.objects.components.impedant.Resistor;
+import circuit.objects.components.switches.ThreeWaySwitch;
+import circuit.objects.components.switches.TwoWaySwitch;
 
 public class App {
     public static void main(String[] args) {

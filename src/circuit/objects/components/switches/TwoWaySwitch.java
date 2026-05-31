@@ -1,5 +1,6 @@
-package circuit.objects.components;
+package circuit.objects.components.switches;
 
+import circuit.objects.components.Terminal;
 import circuit.objects.components.interfaces.Switch;
 
 public class TwoWaySwitch implements Switch {
@@ -11,20 +12,20 @@ public class TwoWaySwitch implements Switch {
         this.terminal1 = new Terminal();
         this.terminal2 = new Terminal();
 
-        terminal1.connect(terminal2);
-        terminal2.connect(terminal1);
+        terminal1.setInternallyConnectedTerminal(terminal2);
+        terminal2.setInternallyConnectedTerminal(terminal1);
     }
 
     @Override
     public boolean turnSwitch() {
 
         if (terminal1.isConnected()) {
-            terminal1.connect(null);
-            terminal2.connect(null);
+            terminal1.setInternallyConnectedTerminal(null);
+            terminal2.setInternallyConnectedTerminal(null);
             return true;
         } else {
-            terminal1.connect(terminal2);
-            terminal2.connect(terminal1);
+            terminal1.setInternallyConnectedTerminal(terminal2);
+            terminal2.setInternallyConnectedTerminal(terminal1);
             return false;
         }
     }

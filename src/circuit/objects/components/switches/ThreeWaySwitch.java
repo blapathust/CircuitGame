@@ -1,12 +1,13 @@
-package circuit.objects.components;
+package circuit.objects.components.switches;
 
+import circuit.objects.components.Terminal;
 import circuit.objects.components.interfaces.Switch;
 
 public class ThreeWaySwitch implements Switch {
 
-    Terminal terminal1;
-    Terminal terminal2;
-    Terminal terminal3;
+    public final Terminal terminal1;
+    public final Terminal terminal2;
+    public final Terminal terminal3;
 
     public ThreeWaySwitch() {
         this.terminal1 = new Terminal();
