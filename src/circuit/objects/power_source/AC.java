@@ -24,7 +24,7 @@ public class AC implements TerminalTag {
 
     public void updateVoltage(float deltaTime) {
 
-        this.voltage = (float) maxVoltage * Math.sin(2 * Math.PI * frequency * deltaTime + phase);
+        this.voltage = (float) (maxVoltage * Math.sin(2 * Math.PI * frequency * deltaTime + phase));
     }
 
     public float getMaxVoltage() {

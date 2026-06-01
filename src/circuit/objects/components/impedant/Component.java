@@ -1,6 +1,6 @@
 package circuit.objects.components.impedant;
 
-import circuit.objects.components.Terminal;
+import circuit.objects.components.other.Terminal;
 import circuit.objects.components.interfaces.BasicImpedantComponentOperations;
 
 public abstract class Component implements BasicImpedantComponentOperations {
@@ -15,8 +15,8 @@ public abstract class Component implements BasicImpedantComponentOperations {
     Component(float resistance) {
         this.resistance = resistance;
 
-        terminalOne = new Terminal();
-        terminalTwo = new Terminal();
+        terminalOne = new Terminal(this);
+        terminalTwo = new Terminal(this);
 
         terminalOne.setInternallyConnectedTerminal(terminalTwo);
         terminalTwo.setInternallyConnectedTerminal(terminalOne);
@@ -39,7 +39,7 @@ public abstract class Component implements BasicImpedantComponentOperations {
 
     @Override
     public void setVoltage(float voltage) {
-        this.voltage = Math.abs(terminalOne.getVoltage() - terminalTwo.getVoltage());
+        this.voltage = voltage;
         updateCurrent();
     }
 

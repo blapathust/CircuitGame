@@ -1,4 +1,4 @@
-package circuit.objects.components;
+package circuit.objects.components.other;
 
 import circuit.objects.components.interfaces.TerminalTag;
 
